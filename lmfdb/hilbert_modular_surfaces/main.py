@@ -281,7 +281,7 @@ class HMSurfaceSearchArray(SearchArray):
     def __init__(self):
         field_discr = TextBox(
             name="field_discr",
-            knowl="hmsurface.todo",
+            knowl="nf.discriminant",
             label="Field discriminant",
             example="12",
             example_span="12, 5-100",
@@ -297,11 +297,11 @@ class HMSurfaceSearchArray(SearchArray):
             name="group_type",
             options=[
                 ("", ""),
-                ("gamma0-gl", "Gamma_0(N)_b"),
-                ("gamma0-sl", "Gamma_0^1(N)_b"),
+                ("gamma0-gl", "Gamma_0(N)"),
+                ("gamma0-sl", "Gamma_0^1(N)"),
             ],
-            knowl="hmsurface.todo",
-            label="Congruence subgroup type",
+            knowl="hmsurface.standard_hmsurfaces",
+            label="Family",
             example=r"$\Gamma_0(\mathfrak{N})_{\mathfrak{b}}$",
         )
         comp = SelectBox(
@@ -323,7 +323,7 @@ class HMSurfaceSearchArray(SearchArray):
         )
         level_norm = TextBoxWithSelect(
             name="level_norm",
-            knowl="hmsurface.level",
+            knowl="hmsurface.levelnorm",
             label="Norm of level ideal",
             example="1",
             example_span="1, 10-20",
@@ -423,8 +423,8 @@ class HMSurfaceSearchArray(SearchArray):
         )
         chi = TextBox(
             name="chi",
-            knowl="hmsurface.chi",
-            label="Holomorphic Euler characteristic",
+            knowl="hmsurface.arithmetic_genus",
+            label="Arithmetic genus",
             example="1",
             example_span="1, 3-4",
         )
@@ -437,8 +437,8 @@ class HMSurfaceSearchArray(SearchArray):
         )
         euler_nb = TextBox(
             name="euler_nb",
-            knowl="hmsurface.euler_nb",
-            label="Euler number",
+            knowl="hmsurface.euler_number",
+            label="Topological Euler number",
             example="2",
             example_span="1-5",
         )
