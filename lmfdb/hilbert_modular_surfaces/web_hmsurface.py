@@ -52,7 +52,7 @@ class WebHMSurface(WebObj):
 
     @lazy_attribute
     def image(self):
-        return f"""<table> 
+        return f"""<table>
         <tr> <td></td><td>
           </td><td align="center"> $1$ </td><td></td><td></td></tr>
         <tr> <td></td>
@@ -97,12 +97,12 @@ class WebHMSurface(WebObj):
         return field
 
     @lazy_attribute
-    def level_label(self):        
+    def level_label(self):
         field, level, comp, _, _ = self.label.split("-")
         return level
-    
+
     @lazy_attribute
-    def component_label(self):        
+    def component_label(self):
         field, level, comp, _, _ = self.label.split("-")
         return comp
 
@@ -140,7 +140,7 @@ class WebHMSurface(WebObj):
     @lazy_attribute
     def field(self):
         return WebNumberField(self.field_label)
-            
+
     @lazy_attribute
     def formatted_cusps(self):
         cusps = list(db.hmsurfaces_cusps.search({'label': self.label}, ['M_label', 'coordinates', 'self_intersections_minimal', 'repetition']))
@@ -149,8 +149,7 @@ class WebHMSurface(WebObj):
     @lazy_attribute
     def formatted_elliptic_pts(self):
         ellpts = list(db.hmsurfaces_elliptic_pts.search({'label': self.label}, ['nb', 'rotation_type']))
-        ptlist = [hmsurface_format_elliptic_pt(pt) for pt in ellpts]
-        ptlist.sort()
+        ptlist = sorted([hmsurface_format_elliptic_pt(pt) for pt in ellpts])
         return ptlist
 
     @lazy_attribute
@@ -164,7 +163,7 @@ class WebHMSurface(WebObj):
     @lazy_attribute
     def kodaira_is_known(self):
         return len(self.kodaira_dims) == 1
-    
+
     @lazy_attribute
     def downloads(self):
         self.downloads = [

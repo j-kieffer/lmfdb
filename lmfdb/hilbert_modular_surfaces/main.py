@@ -249,7 +249,7 @@ def hmsurface_search(info, query):
     if info.get("kodaira_dims"):
         try:
             ZZ(info["kodaira_dims"])
-        except:
+        except BaseException:
             err = "You must specify a single Kodaira dimension"
             flash_error(err)
             raise ValueError(err)
@@ -515,7 +515,7 @@ class HMSurface_stats(StatsDisplay):
     table = db.hmsurfaces_invs
     baseurl_func = ".index"
     buckets = {
-        # TODO: improve buckets for level_norm  vsfield_discr 
+        # TODO: improve buckets for level_norm  vsfield_discr
         'level_norm': ['1','2','3','4','5','6-10','11-20','21-100','101-500'],
         'field_discr': ['5','6-10','11-20','21-100', '101-110','111-140', '141-185', '185-284', '285-3000']
     }
@@ -643,7 +643,7 @@ class HMSurface_download(Downloader):
         s += "ComponentIdeal(Gamma);\n"
         s += "\n// Compute some invariants of the Hilbert surface\n"
         s += "// (see https://github.com/edgarcosta/hilbertmodularforms for more functionality)\n"
-        s += "K2(Gamma)\n";
+        s += "K2(Gamma)\n"
         s += "ArithmeticGenus(Gamma); // The holomorphic Euler characteristic\n"
         s += "HodgeDiamond(Gamma);\n"
         s += "EulerNumber(Gamma);\n"
