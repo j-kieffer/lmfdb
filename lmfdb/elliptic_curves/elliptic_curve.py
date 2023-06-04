@@ -1013,7 +1013,7 @@ class ECSearchArray(SearchArray):
     jump_egspan = "e.g. 11.a2 or 389.a or 11a1 or 389a or [0,1,1,-2,0] or [-3024, 46224] or y^2 = x^3 + 1"
     jump_prompt = "Label or coefficients"
     jump_knowl = "ec.q.search_input"
-    null_column_explanations = { 
+    null_column_explanations = {
                                  'adelic_level': False, # not applicable to CM curves, computed for all non-CM curves
                                  'adelic_index': False, # not applicable to CM curves, computed for all non-CM curves
                                  'adelic_genus': False, # not applicable to CM curves, computed for all non-CM curves
